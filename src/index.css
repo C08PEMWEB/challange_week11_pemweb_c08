@@ -1,0 +1,57 @@
+:root {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #203b32;
+  background: #f5f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --accent: #245d4e;
+  --muted: #68776f;
+  --border: #dfe5dc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: wait; opacity: .6; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #97bba3; outline-offset: 3px; }
+[hidden] { display: none !important; }
+.app-shell { width: min(100% - 40px, 1000px); margin: 0 auto; }
+.app-header { padding: 68px 0 34px; }
+.eyebrow { display: block; color: var(--accent); font-size: .72rem; font-weight: 700; letter-spacing: .14em; }
+h1, h2, h3 { font-family: inherit; }
+h1 { margin: 12px 0; font-size: clamp(2.4rem, 5vw, 3.6rem); letter-spacing: -.055em; line-height: 1.15; }
+h1 span { color: #cc873c; }
+.app-header p, .section-description { color: var(--muted); line-height: 1.7; }
+.section-nav { display: flex; gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 30px; }
+.section-nav button { border: 1px solid transparent; border-radius: 9px; padding: 12px 18px; background: transparent; color: var(--muted); font-weight: 600; }
+.section-nav button[aria-pressed='true'] { background: var(--accent); color: white; }
+.nav-number { margin-right: 9px; font-size: .73rem; opacity: .7; }
+.panel { border: 1px solid var(--border); border-radius: 16px; background: #fff; padding: 34px; }
+h2 { margin: 10px 0; font-size: 1.6rem; letter-spacing: -.04em; }
+.section-description { margin: 0 0 28px; }
+.empty-state { background: #f7f8f4; border: 1px dashed #d9e0d4; border-radius: 10px; padding: 46px 20px; text-align: center; }
+.empty-state h3 { margin: 0 0 10px; font-size: 1rem; }
+.empty-state p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.7; }
+.app-footer { padding: 26px 0; color: var(--muted); text-align: center; font-size: .76rem; }
+/* Kelas bersama untuk form dan kartu milik Orang 2 / Orang 3. */
+.form { display: grid; gap: 16px; margin-bottom: 26px; }
+.form label { display: grid; gap: 7px; font-size: .9rem; font-weight: 600; }
+input, textarea, select { width: 100%; padding: 11px 13px; border: 1px solid var(--border); border-radius: 7px; background: #fff; color: inherit; }
+textarea { min-height: 110px; resize: vertical; }
+.button { border: 0; border-radius: 7px; padding: 11px 17px; background: var(--accent); color: white; font-weight: 600; }
+.button-danger { background: #fbece9; color: #9b3d30; }
+.search-input { margin-bottom: 20px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 16px; }
+.card { border: 1px solid var(--border); border-radius: 10px; padding: 20px; overflow-wrap: anywhere; }
+.card h3 { margin-top: 0; }
+.card p { white-space: pre-wrap; line-height: 1.65; }
+.badge { display: inline-block; padding: 4px 9px; border-radius: 20px; background: #eef3e9; font-size: .75rem; }
+.error-message { padding: 14px; border-radius: 7px; background: #fbece9; color: #9b3d30; }
+.loading-message { color: var(--muted); padding: 14px 0; }
+@media (max-width: 600px) {
+  .app-shell { width: calc(100% - 28px); }
+  .app-header { padding-top: 40px; }
+  .panel { padding: 24px 18px; }
+  .section-nav button { flex: 1; padding: 12px 8px; font-size: .85rem; }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "challenge-modul5-c08",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "workspaces": [
+    "backend"
+  ],
+  "scripts": {
+    "postinstall": "npm run db:generate",
+    "dev": "vite",
+    "dev:server": "npm run dev --workspace backend",
+    "dev:all": "concurrently -k -n API,WEB \"npm run dev:server\" \"npm run dev\"",
+    "build": "tsc -b && vite build && npm run typecheck --workspace backend",
+    "preview": "vite preview",
+    "db:generate": "npm run db:generate --workspace backend",
+    "db:migrate": "npm run db:migrate --workspace backend",
+    "db:seed": "npm run db:seed --workspace backend",
+    "test": "node --import tsx --test --experimental-test-isolation=none src/services/postService.test.ts backend/tests/posts.test.ts",
+    "check": "tsc -b && npm run typecheck --workspace backend"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "concurrently": "9.2.5",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.0.16"
+  },
+  "overrides": {
+    "lightningcss": "1.32.0",
+    "@rolldown/pluginutils": "1.0.1"
+  }
+}

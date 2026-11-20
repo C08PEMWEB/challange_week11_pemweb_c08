@@ -82,6 +82,7 @@ export function PostsSection() {
       <input
         className="search-input"
         placeholder="Cari judul post..."
+        aria-label="Cari judul post"
         value={search}
         onChange={handleSearchChange}
       />
@@ -94,7 +95,7 @@ export function PostsSection() {
         <p className="empty-state">
           {search !== '' ? 'Tidak ada post yang cocok.' : 'Belum ada post.'}
         </p>
-      ) : posts.length > 0 ? (
+      ) : (
         <div className="card-grid">
           {posts.map((post) => (
             <PostCard
@@ -105,7 +106,7 @@ export function PostsSection() {
             />
           ))}
         </div>
-      ) : null}
+      )}
     </section>
   )
 }

@@ -1,2 +1,6 @@
-// Orang 2: definisikan interface Note (id, title, content, category).
-export {}
+export interface Note {
+  id: string
+  title: string
+  content: string
+  category: string
+}
